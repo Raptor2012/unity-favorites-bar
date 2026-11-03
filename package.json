@@ -1,6 +1,6 @@
 {
   "name": "com.raptor2012.favorites-bar",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "Favorites Bar",
   "description": "Hold Alt over the Project window to open a paged favorites bar for assets, folders and scene objects. Drag to add and reorder, click to select, double-click to open.",
   "unity": "2021.3",

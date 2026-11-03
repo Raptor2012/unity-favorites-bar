@@ -62,28 +62,43 @@ namespace FavoritesBar
 
         const string Prefix = "FavoritesBar.";
 
+        // Cached: Held() runs for every item the Project window draws, and EditorPrefs reads are native calls.
+        static bool? enabled;
+        static Shortcut? keys;
+
         public static bool Enabled
         {
-            get => EditorPrefs.GetBool(Prefix + "Enabled", true);
-            set => EditorPrefs.SetBool(Prefix + "Enabled", value);
+            get => enabled ??= EditorPrefs.GetBool(Prefix + "Enabled", true);
+            set
+            {
+                if (value == Enabled) return;
+                enabled = value;
+                EditorPrefs.SetBool(Prefix + "Enabled", value);
+            }
         }
 
         public static Shortcut Keys
         {
-            get => (Shortcut)EditorPrefs.GetInt(Prefix + "Shortcut", 0);
-            set => EditorPrefs.SetInt(Prefix + "Shortcut", (int)value);
+            get => keys ??= (Shortcut)EditorPrefs.GetInt(Prefix + "Shortcut", 0);
+            set
+            {
+                if (value == Keys) return;
+                keys = value;
+                EditorPrefs.SetInt(Prefix + "Shortcut", (int)value);
+            }
         }
 
         /// <summary>True while the chosen shortcut is held.</summary>
         public static bool Held(Event e)
         {
+            if (e == null) return false;
             var required = Keys switch
             {
                 Shortcut.AltShift => EventModifiers.Alt | EventModifiers.Shift,
                 Shortcut.CtrlAlt => EventModifiers.Alt | EventModifiers.Control,
                 _ => EventModifiers.Alt
             };
-            return e != null && (e.modifiers & required) == required;
+            return (e.modifiers & required) == required;
         }
 
         [SettingsProvider]

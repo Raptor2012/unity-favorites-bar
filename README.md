@@ -10,7 +10,7 @@ A free, open-source favorites bar for the Unity Editor. Hold **Alt** over the Pr
 https://github.com/Raptor2012/unity-favorites-bar.git
 ```
 
-Pin a version by adding a tag: `https://github.com/Raptor2012/unity-favorites-bar.git#v1.0.0`.
+Pin a version by adding a tag: `https://github.com/Raptor2012/unity-favorites-bar.git#v1.1.0`.
 
 Requires Unity 2021.3 or newer. It's an editor-only package and adds nothing to builds.
 
