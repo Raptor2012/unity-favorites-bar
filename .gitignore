@@ -1,0 +1,6 @@
+Library/
+*.csproj
+obj/
+bin/
+.vs/
+.idea/

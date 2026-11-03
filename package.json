@@ -1,0 +1,13 @@
+{
+  "name": "com.raptor2012.favorites-bar",
+  "version": "1.0.0",
+  "displayName": "Favorites Bar",
+  "description": "Hold Alt over the Project window to open a paged favorites bar for assets, folders and scene objects. Drag to add and reorder, click to select, double-click to open.",
+  "unity": "2021.3",
+  "author": { "name": "Sanket Das", "url": "https://github.com/Raptor2012" },
+  "license": "MIT",
+  "documentationUrl": "https://github.com/Raptor2012/unity-favorites-bar#readme",
+  "changelogUrl": "https://github.com/Raptor2012/unity-favorites-bar/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/Raptor2012/unity-favorites-bar/blob/main/LICENSE.md",
+  "keywords": ["favorites", "bookmarks", "editor", "project window", "productivity"]
+}
